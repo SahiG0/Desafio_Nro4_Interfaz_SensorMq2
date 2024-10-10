@@ -75,6 +75,19 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('#Links a');
+            const currentPage = window.location.pathname.split('/').pop(); // Obtener el nombre del archivo actual
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('activo'); // Agregar la clase activo al enlace correspondiente
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

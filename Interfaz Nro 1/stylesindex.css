@@ -3,11 +3,12 @@ body {
     margin: 0;
     padding: 0;
     line-height: 2.7;
+    background-color: #FFF4EA;
 }
 
 header {
     background: #C96868;
-    color: #fff;
+    color: #FFF4EA;
     padding: 10px 0;
     text-align: center;
 }
@@ -37,7 +38,7 @@ section {
 
 footer {
     background: #7EACB5;
-    color: #fff;
+    color: #FFF4EA;
     text-align: center;
     padding: 10px 0;
     position: absolute;
@@ -55,9 +56,24 @@ footer {
     top: 30px;
 }
 
-#Links {
+#Links a {
+    
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
     position: relative;
-    left: 1000px;
-    width: 300px;
-    font-size: 20px; /* Tamaño en píxeles */
+    left: 500px;
+    width: 360px;
+    font-size: 25px; /* Tamaño en píxeles */
+    color: #FFF4EA;
+    border-radius: 9px;
+}
+
+#Links a:hover {
+    background-color: #d3d3d3b7; /* Fondo gris al pasar el mouse */
+    color: #f5f1f1; /* Color del texto */
+}
+
+#Links a.activo {
+    background-color: #d3d3d3b7; /* Fondo gris para el enlace activo */
+    color: #f5f1f1; /* Color del texto */
 }
