@@ -65,15 +65,15 @@ footer {
     width: 360px;
     font-size: 25px; /* Tamaño en píxeles */
     color: #FFF4EA;
-    border-radius: 9px;
+    border-radius: 16px;
 }
 
 #Links a:hover {
-    background-color: #d3d3d3b7; /* Fondo gris al pasar el mouse */
+    background-color: #d3d3d370; /* Fondo gris al pasar el mouse */
     color: #f5f1f1; /* Color del texto */
 }
 
 #Links a.activo {
-    background-color: #d3d3d3b7; /* Fondo gris para el enlace activo */
+    background-color: #d3d3d370; /* Fondo gris para el enlace activo */
     color: #f5f1f1; /* Color del texto */
 }

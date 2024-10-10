@@ -53,7 +53,7 @@ table {
     width: 46%; /* Ancho de la tabla */
     height: 60%;
     margin: 20px auto; /* Centrado */
-    border-collapse: collapse;
+    
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     top: 35px;
@@ -72,15 +72,17 @@ td{
 }
 th {
     color: #FFF4EA;
-    border-radius: 9px;
+    border-left: 15px;
     text-align: center;
     font-size: 20px; /* Tamaño en píxeles */
 }
 .Red {
     background-color: #C96868;
+    border-top-right-radius: 20px;
 }
 .Blue {
     background-color: #7EACB5;
+    border-top-left-radius: 20px;
 }
 tr:hover {
     background-color: #f8ffa7;
@@ -108,7 +110,7 @@ td:after {
 #Mensaje {
     background-color: #d3d3d3; /* Color gris */
     padding: 35px; /* Espaciado interno opcional */
-    border-radius: 5px; /* Bordes redondeados opcional */
+    border-radius: 20px; /* Bordes redondeados opcional */
     position: relative;
     left: 900px;
     top: -240px;
@@ -127,7 +129,7 @@ td:after {
     width: 300px;
     font-size: 25px; /* Tamaño en píxeles */
     color: #FFF4EA;
-    border-radius: 9px;
+    border-radius: 16px;
 }
 
 #BotonI{
@@ -137,9 +139,10 @@ td:after {
     text-align: center;
     color: #FFF4EA;
     background-color: #C96868;
+    border-color: #C96868;
     width: 480px;
     height: 65px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 20px; /* Tamaño en píxeles */
 }
 #BotonD {
@@ -149,18 +152,19 @@ td:after {
     text-align: center;
     color: #FFF4EA;
     background-color: #7EACB5;
+    border-color: #7EACB5;
     width: 483px;
     height: 70px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 20px; /* Tamaño en píxeles */
 }
 
 #Links a:hover {
-    background-color: #d3d3d3b7; /* Fondo gris al pasar el mouse */
+    background-color: #d3d3d370; /* Fondo gris al pasar el mouse */
     color: #f5f1f1; /* Color del texto */
 }
 
 #Links a.activo {
-    background-color: #d3d3d3b7; /* Fondo gris para el enlace activo */
+    background-color: #d3d3d370; /* Fondo gris para el enlace activo */
     color: #f5f1f1; /* Color del texto */
 }
