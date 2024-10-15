@@ -15,6 +15,28 @@ section {
     margin-bottom: 20px;
 }
 
+.container.mt-3{
+    height: 600px; /* Altura fija de 500px */
+}
+
+#Visualizador {
+    background-color: #d3d3d3;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(66, 66, 66, 0.1);
+    margin: 20px 0; /* Espacio antes y después del mensaje */
+    height: 100px;
+    width: 1200px;
+}
+
+#Explain {
+    position: relative;
+    top: 100px;
+    font-size: 20px; /* Tamaño en píxeles */
+
+}
+
 
 
 

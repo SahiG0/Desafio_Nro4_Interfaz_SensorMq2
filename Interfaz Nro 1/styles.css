@@ -61,4 +61,8 @@ tr:hover {
     background-color: #7EACB5; /* Color de fondo para BotonD */
 }
 
+.container.mt-3{
+    height: 500px; /* Altura fija de 500px */
+}
+
 
