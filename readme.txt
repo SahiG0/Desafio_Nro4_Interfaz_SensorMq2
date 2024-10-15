@@ -5,6 +5,8 @@ Figma:https://www.figma.com/design/mJ2WwRsxfu911LSfFXSOme/Interfaz-de-sensor-MQ2
 
 Documento:https://docs.google.com/document/d/1UGcJ3KhxEmsX0L9R9cDygbtQiyP9foxVpb1ilgRGA5s/edit?usp=sharing
 
+Wokwi: https://wokwi.com/projects/410645194908886017
+
 Integrantes: Chicharras superpoderosas y el Eze.
     1.Ezequiel Fernández.
     2.Jazmín Rodríguez.
