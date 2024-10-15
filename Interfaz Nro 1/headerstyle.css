@@ -1,0 +1,68 @@
+header {
+    background: #C96868;
+    color: #FFF4EA;
+    padding: 10px 0;
+    height: 150px;
+    
+}
+
+.Links a {
+    
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    position: relative;
+    left: 950px;
+    top: 20px;
+    width: 360px;
+    font-size: 25px; /* Tamaño en píxeles */
+    color: #FFF4EA;
+    border-radius: 16px;
+}
+
+.Links a:hover {
+    background-color: #d3d3d370; /* Fondo gris al pasar el mouse */
+    color: #f5f1f1; /* Color del texto */
+}
+
+.Links a.activo {
+    background-color: #d3d3d370; /* Fondo gris para el enlace activo */
+    color: #f5f1f1; /* Color del texto */
+}
+
+.RectAma {
+    background-color: #FADFA1;
+    height: 65px;
+    width: 100%;
+    position: relative;
+    top: 55px;
+}
+
+/* Ajustes específicos para Bootstrap */
+.nav-link {
+    font-size: 16px; /* Ajuste de tamaño de letra para enlaces de navegación */
+}
+
+.nav-link:hover {
+    background-color: #f3ddaa; /* Fondo al pasar el mouse */
+}
+
+.nav-link.active {
+    background-color: #d3d3d370; /* Fondo para el enlace activo */
+    color: #f5f1f1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remover márgenes predeterminados */
+}
+
+nav ul li {
+    display: inline-block; /* Cambio a inline-block para mejor control con Bootstrap */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
