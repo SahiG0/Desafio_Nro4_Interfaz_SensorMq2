@@ -6,7 +6,7 @@ header {
     
 }
 
-.Links a {
+.Link a {
     
     text-decoration: none; /* Sin subrayado */
     transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
@@ -19,14 +19,18 @@ header {
     border-radius: 16px;
 }
 
-.Links a:hover {
-    background-color: #d3d3d370; /* Fondo gris al pasar el mouse */
+.Link a:hover {
+    background-color: #bcb5b55f; /* Fondo gris al pasar el mouse */
     color: #f5f1f1; /* Color del texto */
 }
 
-.Links a.activo {
-    background-color: #d3d3d370; /* Fondo gris para el enlace activo */
+.Link a.activo {
+    background-color: #a5a5a589; /* Fondo gris para el enlace activo */
     color: #f5f1f1; /* Color del texto */
+}
+
+.Link a {
+    padding: 5px 10px; /* Espaciado alrededor del texto */
 }
 
 .RectAma {

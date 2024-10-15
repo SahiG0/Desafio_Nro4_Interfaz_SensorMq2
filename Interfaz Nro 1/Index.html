@@ -13,9 +13,9 @@
 <body>
     <header class="bg-danger text-white text-center p-2" >
         <nav>
-            <ul class="Links">
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="interfaz01.html" >Conexión con MQ2</a></li>
+            <ul class="Link">
+                <li><a class="nav-link" href="Index.html">Home</a></li>
+                <li><a class="nav-link" href="interfaz01.html" >Conexión con MQ2</a></li>
             </ul>
         </nav>
         <div class="RectAma"></div>
@@ -46,17 +46,33 @@
     </footer>
 
     <script src="script.js"></script>
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", () => {
             const links = document.querySelectorAll('.nav-link');
-            const currentPage = window.location.pathname.split('/').pop();
-
+            const currentPage = window.location.pathname.split('/').pop() || '';
+        
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
+                    link.classList.add('active'); // Añade la clase 'active'
+                    link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                 }
+        
+                link.addEventListener('mouseover', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
+                    }
+                });
+        
+                link.addEventListener('mouseout', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = ''; // Restablece el color de fondo
+                    }
+                });
             });
         });
-    </script>
+        </script>
+        
+        
 </body>
 </html>
