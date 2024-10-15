@@ -9,3 +9,16 @@ footer {
     
 }
 
+.LogoProa {
+    position: relative;
+    top: 4px;
+    right: 530px;
+    height: 160px;
+    width: 200px;
+}
+
+.Autores {
+    position: relative;
+    top: -120px;
+}
+
