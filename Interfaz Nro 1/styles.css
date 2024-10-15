@@ -9,6 +9,8 @@ body {
 header {
     background-color: #C96868;
     color: #FFF4EA;
+    padding: 10px 0;
+    height: 150px;
 }
 
 nav ul {
@@ -39,9 +41,12 @@ footer {
 
 .RectAma {
     background-color: #FADFA1;
-    height: 42px;
+    height: 65px;
     width: 100%;
+    position: relative;
+    top: 40px;
 }
+
 
 table {
     width: 100%; /* Adaptativo al contenedor */
