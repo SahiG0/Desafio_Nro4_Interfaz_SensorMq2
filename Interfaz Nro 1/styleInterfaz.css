@@ -53,9 +53,9 @@ tr:hover {
     box-shadow: 0 2px 10px rgba(66, 66, 66, 0.1);
     margin: 20px 0; /* Espacio antes y después del mensaje */
     width: 30%;
-    height: 60%;
+    height: 30%;
     position: relative;
-    top: -190px;
+    top: -212px;
     left: 62%;
    
 }
@@ -73,7 +73,7 @@ tr:hover {
 }
 #BotonI {
     position: relative;
-    top: -570px;
+    top: -598px;
     left: 62%;
 }
 
@@ -81,7 +81,11 @@ tr:hover {
     background-color: #7EACB5; /* Color de fondo para BotonD */
     position: relative;
     left: 28%;
-    top: -500px;
+    top: -526px;
+}
+
+.container.mt-3{
+    height: 500px; /* Altura fija de 500px */
 }
 
 

@@ -17,18 +17,21 @@ header {
     font-size: 22px; /* Tamaño en píxeles */
     color: #FFF4EA;
     border-radius: 16px;
-   box-shadow: 1px 1px 10px rgba(77, 76, 76, 0.5);
+    box-shadow: 1px 1px 10px rgba(77, 76, 76, 0.5);
+    background-color: transparent; /* Fondo transparente */
+    color:#f5f1f1; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado si lo deseas */
     
     
 }
 
 .Link a:hover {
-    background-color: #bcb5b51a; /* Fondo gris al pasar el mouse */
+    background-color: #68606053; /* Fondo gris al pasar el mouse */
     color: #f5f1f1; /* Color del texto */
 }
 
 .Link a.activo {
-    background-color: #a5a5a559; /* Fondo gris para el enlace activo */
+    background-color: #9c8f8f59; /* Fondo gris para el enlace activo */
     color: #f5f1f1; /* Color del texto */
 }
 

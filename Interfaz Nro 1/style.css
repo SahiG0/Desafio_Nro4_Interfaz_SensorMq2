@@ -28,13 +28,16 @@ section {
     margin: 20px 0; /* Espacio antes y después del mensaje */
     height: 100px;
     width: 1200px;
+    position: relative;
+    top: 30px;
+    left:40px;
 }
 
 #Explain {
     position: relative;
     top: 80px;
-    font-size: 20px; /* Tamaño en píxeles */
-
+    font-size: 22px; /* Tamaño en píxeles */
+    left: 40px;
 }
 
 
