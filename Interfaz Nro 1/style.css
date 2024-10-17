@@ -35,8 +35,14 @@ section {
 
 #Explain {
     position: relative;
-    top: 60px;
+    top: 15px;
     font-size: 20px; /* Tamaño en píxeles */
+    left: 45px;
+}
+
+#Dtrata {
+    position: relative;
+    top: 60px;
     left: 45px;
 }
 
