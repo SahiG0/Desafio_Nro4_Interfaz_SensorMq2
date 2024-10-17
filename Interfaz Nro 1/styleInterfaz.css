@@ -11,7 +11,10 @@ main {
 }
 
 table {
-    width: 100%; /* Adaptativo al contenedor */
+    position: relative;
+    top: 30px;
+    left: 40px;
+    width: 50%; /* Adaptativo al contenedor */
     margin: 20px 0; /* Centrado y con espacio vertical */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -21,7 +24,12 @@ th, td {
     text-align: left;
     border-bottom: 1px solid #FFF4EA;
 }
-
+.amarilloClaro {
+    background-color: #fee7b9;
+}
+.amarilloOscuro {
+    background-color:#FADFA1;
+}
 tr:hover {
     background-color: #f8ffa7; /* Estilo al pasar el mouse */
 }
@@ -44,10 +52,16 @@ tr:hover {
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(66, 66, 66, 0.1);
     margin: 20px 0; /* Espacio antes y después del mensaje */
+    width: 30%;
+    height: 60%;
+    position: relative;
+    top: -190px;
+    left: 62%;
+   
 }
 
 #BotonI, #BotonD {
-    width: 100%; /* Aprovechar el espacio en el contenedor grid */
+    width: 34%; /* Aprovechar el espacio en el contenedor grid */
     text-align: center;
     color: #FFF4EA;
     background-color: #C96868; /* Color de fondo para BotonI */
@@ -55,14 +69,19 @@ tr:hover {
     padding: 10px;
     border-radius: 20px;
     font-size: 20px;
+    height: 55px;
+}
+#BotonI {
+    position: relative;
+    top: -570px;
+    left: 62%;
 }
 
 #BotonD {
     background-color: #7EACB5; /* Color de fondo para BotonD */
-}
-
-.container.mt-3{
-    height: 500px; /* Altura fija de 500px */
+    position: relative;
+    left: 28%;
+    top: -500px;
 }
 
 

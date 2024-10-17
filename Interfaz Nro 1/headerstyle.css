@@ -14,18 +14,21 @@ header {
     left: 950px;
     top: 20px;
     width: 360px;
-    font-size: 25px; /* Tamaño en píxeles */
+    font-size: 22px; /* Tamaño en píxeles */
     color: #FFF4EA;
     border-radius: 16px;
+   box-shadow: 1px 1px 10px rgba(77, 76, 76, 0.5);
+    
+    
 }
 
 .Link a:hover {
-    background-color: #bcb5b55f; /* Fondo gris al pasar el mouse */
+    background-color: #bcb5b51a; /* Fondo gris al pasar el mouse */
     color: #f5f1f1; /* Color del texto */
 }
 
 .Link a.activo {
-    background-color: #a5a5a589; /* Fondo gris para el enlace activo */
+    background-color: #a5a5a559; /* Fondo gris para el enlace activo */
     color: #f5f1f1; /* Color del texto */
 }
 
@@ -38,7 +41,7 @@ header {
     height: 65px;
     width: 100%;
     position: relative;
-    top: 55px;
+    top: 65px;
 }
 
 /* Ajustes específicos para Bootstrap */
@@ -51,7 +54,7 @@ header {
 }
 
 .nav-link.active {
-    background-color: #d3d3d370; /* Fondo para el enlace activo */
+    background-color: #d3d3d325; /* Fondo para el enlace activo */
     color: #f5f1f1;
 }
 
