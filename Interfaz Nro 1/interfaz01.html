@@ -59,13 +59,8 @@
             </table>
         </section>
 
-        <div id="Mensaje">
-            <h3>Mensaje  de estado que 
-                informe al usuario si la 
-                conexión está activa o si hubo
-                 algún problema durante la
-                 transmisión de datos.
-            </h3>
+        <div id="message">
+            <h3> Esperando conexión... </h3>
         </div>
         
         <button id="BotonC">Conectar</button>
@@ -104,6 +99,27 @@
                 });
             });
         });
+
+        // Función para verificar conexión a un servidor
+        function checkConnection() {
+            // URL de prueba (puede ser cualquier endpoint que responda correctamente)
+            const url = "https://jsonplaceholder.typicode.com/posts/1"; 
+
+            // Intento de hacer una solicitud
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById("message").textContent = "Conexión establecida";
+                    } else {
+                        document.getElementById("message").textContent = "Conexión fallida";
+                    }
+                })
+                .catch(error => {
+                    // Si ocurre un error (e.g., no hay conexión)
+                    document.getElementById("message").textContent = "No se pudo establecer conexión";
+                });
+        }
+
         </script>
         
         
