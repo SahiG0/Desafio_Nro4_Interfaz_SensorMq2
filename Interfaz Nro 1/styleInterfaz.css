@@ -60,7 +60,7 @@ tr:hover {
    
 }
 
-#BotonI, #BotonD {
+#BotonC, #BotonD {
     width: 34%; /* Aprovechar el espacio en el contenedor grid */
     text-align: center;
     color: #FFF4EA;
@@ -72,7 +72,7 @@ tr:hover {
     height: 55px;
     filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
 }
-#BotonI {
+#BotonC {
     position: relative;
     top: -598px;
     left: 62%;
