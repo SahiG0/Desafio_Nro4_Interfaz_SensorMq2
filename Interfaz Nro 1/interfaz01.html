@@ -100,29 +100,23 @@
             });
         });
 
-        // Función para verificar conexión a un servidor
-        function checkConnection() {
-            // URL de prueba (puede ser cualquier endpoint que responda correctamente)
-            const url = "https://jsonplaceholder.typicode.com/posts/1"; 
+          // Funciones para conectar y desconectar
+        document.getElementById('BotonC').addEventListener('click', () => {
+            if (confirm("¿Deseas conectarte a la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
+            }
+        });
 
-            // Intento de hacer una solicitud
-            fetch(url)
-                .then(response => {
-                    if (response.ok) {
-                        document.getElementById("message").textContent = "Conexión establecida";
-                    } else {
-                        document.getElementById("message").textContent = "Conexión fallida";
-                    }
-                })
-                .catch(error => {
-                    // Si ocurre un error (e.g., no hay conexión)
-                    document.getElementById("message").textContent = "No se pudo establecer conexión";
-                });
-        }
+        document.getElementById('BotonD').addEventListener('click', () => {
+            if (confirm("¿Deseas desconectarte de la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
+            }
+        });
 
         </script>
-        
-        
-
 </body>
 </html>
