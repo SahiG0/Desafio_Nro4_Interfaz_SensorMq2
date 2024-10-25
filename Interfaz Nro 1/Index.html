@@ -20,7 +20,7 @@
 
     <main>
        
-       <h3>¿De qué trata?Agregar texto explicando cual es el funcionamiento y
+       <h3>¿De qué trata? Agregar texto explicando cual es el funcionamiento y
         objetivo de la página web y/o explicación sobre qué es, como
         funciona y para qué es utilizado el sensor MQ2 para el 
         usuario. </h3>
@@ -30,19 +30,5 @@
         <p>&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('#Links a');
-            const currentPage = window.location.pathname.split('/').pop(); // Obtener el nombre del archivo actual
-
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('activo'); // Agregar la clase activo al enlace correspondiente
-                }
-            });
-        });
-    </script>
 </body>
 </html>
