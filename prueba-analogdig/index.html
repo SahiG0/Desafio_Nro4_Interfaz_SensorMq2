@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión WebSocket con Arduino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #status {
+            margin: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button.connect {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.disconnect {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Datos Recibidos del Arduino</h2>
+
+    <!-- Mensaje de estado -->
+    <div id="status">Estado: Desconectado</div>
+
+    <!-- Botones de Conexión y Desconexión -->
+    <button class="connect" id="connectBtn">Conectar</button>
+    <button class="disconnect" id="disconnectBtn" disabled>Desconectar</button>
+
+    <!-- Tabla de datos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Dato Analógico (Sensor)</th>
+                <th>Dato Digital (Estado)</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+            <tr>
+                <td>Esperando datos...</td>
+                <td>Esperando datos...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let socket; // Variable para almacenar el WebSocket
+
+        const connectBtn = document.getElementById('connectBtn');
+        const disconnectBtn = document.getElementById('disconnectBtn');
+        const statusDiv = document.getElementById('status');
+        const tableBody = document.getElementById('dataTable');
+
+        // Función para conectar al WebSocket
+        function connectWebSocket() {
+            socket = new WebSocket('ws://localhost:8080');
+
+            socket.onopen = function() {
+                statusDiv.textContent = 'Estado: Conectado';
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+            };
+
+            socket.onmessage = function(event) {
+                const receivedData = JSON.parse(event.data);
+                const analogData = receivedData.analog;
+                const digitalData = receivedData.digital;
+                addDataToTable(analogData, digitalData);
+            };
+
+            socket.onclose = function() {
+                statusDiv.textContent = 'Estado: Desconectado';
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            };
+
+            socket.onerror = function(error) {
+                console.log('Error en WebSocket:', error);
+                statusDiv.textContent = 'Estado: Error de conexión';
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            };
+        }
+
+        // Función para desconectar el WebSocket
+        function disconnectWebSocket() {
+            if (socket) {
+                socket.close();
+            }
+        }
+
+        // Función para agregar una nueva fila a la tabla
+        function addDataToTable(analogData, digitalData) {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${analogData}</td><td>${digitalData}</td>`;
+            tableBody.appendChild(newRow);
+        }
+
+        // Asignar funciones a los botones
+        connectBtn.addEventListener('click', connectWebSocket);
+        disconnectBtn.addEventListener('click', disconnectWebSocket);
+    </script>
+</body>
+</html>
