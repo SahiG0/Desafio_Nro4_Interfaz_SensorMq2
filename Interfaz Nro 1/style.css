@@ -4,6 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: #FFF4EA;
+    overflow: auto;
 }
 
 
