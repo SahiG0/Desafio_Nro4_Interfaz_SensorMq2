@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interfaz de sensor de datos mq2</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -58,15 +59,15 @@
         </section>
 
         <div id="Mensaje">
-            <h3>Mensaje  de estado que 
+            <h3>Mensaje de estado que 
                 informe al usuario si la 
                 conexión está activa o si hubo
                  algún problema durante la
                  transmisión de datos.
             </h3>
         </div>
-        <button id="BotonI">Boton de inicio</button>
-        <button id="BotonD">Boton de desconexion</button>
+        <button id="BotonI" id="connect">Boton de inicio</button>
+        <button id="BotonD" id="connect">Boton de desconexion</button>
        
     </main>
 
@@ -74,20 +75,7 @@
         <p>&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('#Links a');
-            const currentPage = window.location.pathname.split('/').pop(); // Obtener el nombre del archivo actual
-
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('activo'); // Agregar la clase activo al enlace correspondiente
-                }
-            });
-        });
-    </script>
+    <script src="node.js"></script>
 
 </body>
 </html>
