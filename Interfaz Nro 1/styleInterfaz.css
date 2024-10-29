@@ -90,4 +90,27 @@ tr:hover {
     height: 500px; /* Altura fija de 500px */
 }
 
+/* Animación de conexión */
+@keyframes connectAnimation {
+    0% { background-color: green; }
+    50% { background-color: lightgreen; }
+    100% { background-color: green; }
+}
+
+/* Animación de desconexión */
+@keyframes disconnectAnimation {
+    0% { background-color: red; }
+    50% { background-color: lightcoral; }
+    100% { background-color: red; }
+}
+
+/* Clases para activar las animaciones */
+.connecting {
+    animation: connectAnimation 1s ease-in-out;
+}
+
+.disconnecting {
+    animation: disconnectAnimation 1s ease-in-out;
+}
+
 

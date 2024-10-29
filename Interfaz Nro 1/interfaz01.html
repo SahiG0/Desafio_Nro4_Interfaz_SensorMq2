@@ -100,23 +100,35 @@
             });
         });
 
-          // Funciones para conectar y desconectar
-        document.getElementById('BotonC').addEventListener('click', () => {
-            if (confirm("¿Deseas conectarte a la placa?")) {
-                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
-            } else {
-                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
-            }
-        });
+            document.getElementById('BotonC').addEventListener('click', () => {
+        if (confirm("¿Deseas conectarte a la placa?")) {
+            document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
+            // Agregar clase de animación
+            const buttonC = document.getElementById('BotonC');
+            buttonC.classList.add('connecting');
+            
+            // Limpiar la clase después de la animación
+            setTimeout(() => buttonC.classList.remove('connecting'), 1000);
+        } else {
+            document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
+        }
+    });
 
-        document.getElementById('BotonD').addEventListener('click', () => {
-            if (confirm("¿Deseas desconectarte de la placa?")) {
-                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
-            } else {
-                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
-            }
-        });
+    document.getElementById('BotonD').addEventListener('click', () => {
+        if (confirm("¿Deseas desconectarte de la placa?")) {
+            document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
+            // Agregar clase de animación
+            const buttonD = document.getElementById('BotonD');
+            buttonD.classList.add('disconnecting');
+
+            // Limpiar la clase después de la animación
+            setTimeout(() => buttonD.classList.remove('disconnecting'), 1000);
+        } else {
+            document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
+        }
+    });
 
         </script>
+
 </body>
 </html>
