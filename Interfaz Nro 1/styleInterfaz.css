@@ -113,4 +113,39 @@ tr:hover {
     animation: disconnectAnimation 1s ease-in-out;
 }
 
+.arduino1 {
+    width: 6%;
+    height: 6%;
+    position: relative;
+    top: -600px;
+    animation-name: mianimacion1;
+    animation-duration: 4s;
+}
+.usb {
+    width: 4%;
+    height: 4%;
+    position: relative;
+    top: -600px;
+    animation-name: mianimacion2;
+    animation-duration: 4s;
+}
+
+#imgusb {
+    width: 4%;
+    height: 4%;
+    position: relative;
+    top: -600px;
+    animation-name: mianimacion2;
+    animation-duration: 4s;
+}
+#imgarduino1 {
+    width: 6%;
+    height: 6%;
+    position: relative;
+    top: -600px;
+    animation-name: mianimacion1;
+    animation-duration: 4s;
+}
+
+
 
