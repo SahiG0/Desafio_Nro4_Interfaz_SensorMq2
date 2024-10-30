@@ -65,11 +65,11 @@
 
         <button id="BotonC">Conectar</button>
         <button id="BotonD">Desconectar</button>
-        <div id="arduino1">
+        <div class="arduino1">
             <img src="img/Arduino.png" alt="Placa Arduino 1" id="imgarduino1">
         </div>
 
-        <div id="usb">
+        <div class="usb">
             <img src="img/USB.png" alt="Cable USB" id="imgusb">
         </div>
        
@@ -79,63 +79,66 @@
         <img src="img/LogoProA.png" alt="Logo ProA La Falda" class="LogoProa">
         <p class="Autores">&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll('.nav-link');
-            const currentPage = window.location.pathname.split('/').pop() || '';
-        
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active'); // Añade la clase 'active'
-                    link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
-                }
-        
-                link.addEventListener('mouseover', () => {
-                    if (!link.classList.contains('active')) {
-                        link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const links = document.querySelectorAll('.nav-link');
+                const currentPage = window.location.pathname.split('/').pop() || '';
+            
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active'); // Añade la clase 'active'
+                        link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                     }
-                });
-        
-                link.addEventListener('mouseout', () => {
-                    if (!link.classList.contains('active')) {
-                        link.style.backgroundColor = ''; // Restablece el color de fondo
-                    }
+            
+                    link.addEventListener('mouseover', () => {
+                        if (!link.classList.contains('active')) {
+                            link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
+                        }
+                    });
+            
+                    link.addEventListener('mouseout', () => {
+                        if (!link.classList.contains('active')) {
+                            link.style.backgroundColor = ''; // Restablece el color de fondo
+                        }
+                    });
                 });
             });
+
+                document.getElementById('BotonC').addEventListener('click', () => {
+            if (confirm("¿Deseas conectarte a la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
+                // Agregar clase de animación
+                const buttonC = document.getElementById('BotonC');
+                buttonC.classList.add('connecting');
+                
+                // Limpiar la clase después de la animación
+                setTimeout(() => buttonC.classList.remove('connecting'), 1000);
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
+            }
         });
 
-            document.getElementById('BotonC').addEventListener('click', () => {
-        if (confirm("¿Deseas conectarte a la placa?")) {
-            document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
-            // Agregar clase de animación
-            const buttonC = document.getElementById('BotonC');
-            buttonC.classList.add('connecting');
-            
-            // Limpiar la clase después de la animación
-            setTimeout(() => buttonC.classList.remove('connecting'), 1000);
-        } else {
-            document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
-        }
-    });
+        document.getElementById('BotonD').addEventListener('click', () => {
+            if (confirm("¿Deseas desconectarte de la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
+                // Agregar clase de animación
+                const buttonD = document.getElementById('BotonD');
+                buttonD.classList.add('disconnecting');
 
-    document.getElementById('BotonD').addEventListener('click', () => {
-        if (confirm("¿Deseas desconectarte de la placa?")) {
-            document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
-            // Agregar clase de animación
-            const buttonD = document.getElementById('BotonD');
-            buttonD.classList.add('disconnecting');
+                // Limpiar la clase después de la animación
+                setTimeout(() => buttonD.classList.remove('disconnecting'), 1000);
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
+            }
+        });
 
-            // Limpiar la clase después de la animación
-            setTimeout(() => buttonD.classList.remove('disconnecting'), 1000);
-        } else {
-            document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
-        }
-    });
+    </script>
+    <script src="mainjs.js">
 
-        </script>
+    </script>
 
 </body>
 </html>
