@@ -11,26 +11,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-danger text-white text-center p-2" >
+    <!-- Encabezado de la página con fondo rojo, texto blanco y centrado -->
+    <header class="bg-danger text-white text-center p-2">
         <nav>
+            <!-- Lista de enlaces de navegación -->
             <ul class="Link">
+                <!-- Enlace de navegación a la página principal -->
                 <li><a class="nav-link" href="Index.html">Home</a></li>
+                <!-- Enlace de navegación a otra página -->
                 <li><a class="nav-link" href="interfaz01.html" >Conexión con MQ2</a></li>
             </ul>
         </nav>
+        <!-- Div vacío para algún propósito de estilo o estructura -->
         <div class="RectAma"></div>
     </header>
 
+    <!-- Cuerpo principal de la página -->
     <main class="container mt-3">
 
         <div id="Visualizador">
             <h2> Visualizador de datos del <br>
-                <strong>Sensor MQ2</strong> 
+                <strong>Sensor MQ2</strong>
             </h2>
         </div>
 
+        <!-- Título para la sección que explica el contenido -->
         <h2 id="Dtrata">¿De qué trata?</h2>
         <h3 id="Explain">
+            <!-- Texto explicativo sobre el funcionamiento del sensor MQ2 y la página -->
             <br> Agregar texto explicando cual es el funcionamiento y objetivo de la página web y/o
             explicación sobre <br> qué es, como funciona y para qué es utilizado el sensor MQ2 para el usuario.
             Agregar texto explicando <br> cual es el funcionamiento y objetivo de la página web y/o
@@ -41,30 +49,41 @@
 
     </main>
 
-    <footer class="bg-info text-white text-center p-3 mt-auto" >
+    <!-- Pie de página con fondo azul claro, texto blanco, centrado y con espacio adicional -->
+    <footer class="bg-info text-white text-center p-3 mt-auto">
+        <!-- Imagen con logo de la página -->
         <img src="img/Diseño_sin_título-removebg-preview.png" alt="Logo ProA La Falda" class="LogoProa">
+        <!-- Texto con derechos de autor -->
         <p class="Autores" >&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Inclusión del archivo JavaScript principal -->
     <script src="script.js"></script>
     
     <script>
+        // Espera que todo el contenido de la página esté cargado
         document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll('.nav-link');
+            // Selecciona todos los elementos con la clase 'nav-link' (enlaces de navegación)
+            const links = document.querySelectorAll('.nav-link'); 
+            // Obtiene la última parte de la URL de la página actual (el nombre del archivo)
             const currentPage = window.location.pathname.split('/').pop() || '';
         
+            // Recorre todos los enlaces de navegación
             links.forEach(link => {
+                // Si el enlace tiene el mismo href que la página actual, se le agrega la clase 'active'
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active'); // Añade la clase 'active'
                     link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                 }
         
+                // Añade un efecto cuando el ratón pasa sobre el enlace
                 link.addEventListener('mouseover', () => {
                     if (!link.classList.contains('active')) {
                         link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
                     }
                 });
         
+                // Elimina el efecto cuando el ratón deja de estar sobre el enlace
                 link.addEventListener('mouseout', () => {
                     if (!link.classList.contains('active')) {
                         link.style.backgroundColor = ''; // Restablece el color de fondo
@@ -72,8 +91,7 @@
                 });
             });
         });
-        </script>
-        
-        
+    </script>
 </body>
+
 </html>

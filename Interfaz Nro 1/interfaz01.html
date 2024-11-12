@@ -10,27 +10,36 @@
     <link rel="stylesheet" href="styleInterfaz.css">
 </head>
 <body>
+    <!-- Encabezado de la página con fondo rojo, texto blanco y centrado -->
     <header class="bg-danger text-white text-center p-2">
         <nav>
+            <!-- Lista de enlaces de navegación -->
             <ul class="Link">
+                <!-- Enlace de navegación a la página principal -->
                 <li><a class="nav-link" href="Index.html">Home</a></li>
+                <!-- Enlace de navegación a otra página -->
                 <li><a class="nav-link" href="interfaz01.html">Conexión con MQ2</a></li>
             </ul>
-        </nav> 
+        </nav>
+        <!-- Div vacío para algún propósito de estilo o estructura -->
         <div class="RectAma"></div>
     </header>
 
+    <!-- Cuerpo principal de la página -->
     <main class="container mt-3">
        
+        <!-- Sección que contiene una tabla con datos -->
         <section id="services">
             <table>
                 <thead>
+                    <!-- Encabezados de las columnas de la tabla -->
                     <tr>
                         <th class="Blue">Dato analógico</th>
                         <th class="Red">Dato digital</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Fila de la tabla con datos, algunas celdas tienen diferentes clases de color -->
                     <tr>
                         <td class="amarilloOscuro">Dato</td>
                         <td class="amarilloOscuro">Dato</td>
@@ -59,39 +68,52 @@
             </table>
         </section>
 
+        <!-- Sección que muestra un mensaje de espera de conexión -->
         <div id="message">
             <h3> Esperando conexión... </h3>
         </div>
         
+        <!-- Botones para conectar y desconectar -->
         <button id="BotonC">Conectar</button>
         <button id="BotonD">Desconectar</button>
        
     </main>
 
+    <!-- Pie de página con el logo y derechos de autor -->
     <footer>
+        <!-- Imagen con el logo de la página -->
         <img src="img/Diseño_sin_título-removebg-preview.png" alt="Logo ProA La Falda" class="LogoProa">
+        <!-- Texto con derechos de autor -->
         <p class="Autores">&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Inclusión del archivo JavaScript principal -->
     <script src="script.js"></script>
 
     <script>
+        // Espera a que todo el contenido de la página esté cargado antes de ejecutar el script
         document.addEventListener("DOMContentLoaded", () => {
+            // Selecciona todos los enlaces con la clase 'nav-link' (enlaces de navegación)
             const links = document.querySelectorAll('.nav-link');
+            // Obtiene la última parte de la URL de la página actual (el nombre del archivo)
             const currentPage = window.location.pathname.split('/').pop() || '';
         
+            // Recorre todos los enlaces de navegación
             links.forEach(link => {
+                // Si el enlace tiene el mismo href que la página actual, se le agrega la clase 'active'
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active'); // Añade la clase 'active'
                     link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                 }
         
+                // Añade un efecto cuando el ratón pasa sobre el enlace
                 link.addEventListener('mouseover', () => {
                     if (!link.classList.contains('active')) {
                         link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
                     }
                 });
         
+                // Elimina el efecto cuando el ratón deja de estar sobre el enlace
                 link.addEventListener('mouseout', () => {
                     if (!link.classList.contains('active')) {
                         link.style.backgroundColor = ''; // Restablece el color de fondo
@@ -100,23 +122,26 @@
             });
         });
 
-          // Funciones para conectar y desconectar
+        // Función que se ejecuta al hacer clic en el botón "Conectar"
         document.getElementById('BotonC').addEventListener('click', () => {
+            // Muestra un mensaje de confirmación antes de conectarse
             if (confirm("¿Deseas conectarte a la placa?")) {
-                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
+                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>"; // Mensaje de conexión exitosa
             } else {
-                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
+                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>"; // Mensaje si se cancela la conexión
             }
         });
 
+        // Función que se ejecuta al hacer clic en el botón "Desconectar"
         document.getElementById('BotonD').addEventListener('click', () => {
+            // Muestra un mensaje de confirmación antes de desconectarse
             if (confirm("¿Deseas desconectarte de la placa?")) {
-                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
+                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>"; // Mensaje de desconexión exitosa
             } else {
-                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
+                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>"; // Mensaje si se cancela la desconexión
             }
         });
 
-        </script>
+    </script>
 </body>
 </html>
