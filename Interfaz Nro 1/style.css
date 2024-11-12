@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #FFF4EA;
+    overflow-x: hidden;
+}
+
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.container.mt-3{
+    height: 500px; /* Altura fija de 500px */
+}
+
+#Visualizador {
+    background-color: #d3d3d3;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(66, 66, 66, 0.1);
+    margin: 20px 0; /* Espacio antes y después del mensaje */
+    height: 100px;
+    width: 1200px;
+    position: relative;
+    top: 30px;
+    left:40px;
+}
+
+#Explain {
+    position: relative;
+    top: 15px;
+    font-size: 20px; /* Tamaño en píxeles */
+    left: 45px;
+}
+
+#Dtrata {
+    position: relative;
+    top: 60px;
+    left: 45px;
+}
+
+
+
+
+
+

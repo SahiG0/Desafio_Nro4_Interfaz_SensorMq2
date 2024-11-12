@@ -1,0 +1,24 @@
+footer {
+    background: #7EACB5;
+    color: #FFF4EA;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+    
+}
+
+.LogoProa {
+    position: relative;
+    top: 13px;
+    right: 530px;
+    height: 150px;
+    width: 150px;
+}
+
+.Autores {
+    position: relative;
+    top: -120px;
+}
+

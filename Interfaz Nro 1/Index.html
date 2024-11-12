@@ -5,44 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="stylesindex.css">
+    <link rel="stylesheet" href="footerstyle.css">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="bg-danger text-white text-center p-2" >
         <nav>
-            <ul id="Links">
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="interfaz01.html">Conexion con MQ2</a></li>
+            <ul class="Link">
+                <li><a class="nav-link" href="Index.html">Home</a></li>
+                <li><a class="nav-link" href="interfaz01.html" >Conexión con MQ2</a></li>
             </ul>
-        </nav> 
-        <section class="RectAma"></section>
+        </nav>
+        <div class="RectAma"></div>
     </header>
 
-    <main>
-       
-       <h3>¿De qué trata?Agregar texto explicando cual es el funcionamiento y
-        objetivo de la página web y/o explicación sobre qué es, como
-        funciona y para qué es utilizado el sensor MQ2 para el 
-        usuario. </h3>
+    <main class="container mt-3">
+
+        <div id="Visualizador">
+            <h2> Visualizador de datos del <br>
+                <strong>Sensor MQ2</strong> 
+            </h2>
+        </div>
+
+        <h2 id="Dtrata">¿De qué trata?</h2>
+        <h3 id="Explain">
+            <br> Agregar texto explicando cual es el funcionamiento y objetivo de la página web y/o
+            explicación sobre <br> qué es, como funciona y para qué es utilizado el sensor MQ2 para el usuario.
+            Agregar texto explicando <br> cual es el funcionamiento y objetivo de la página web y/o
+            explicación sobre qué es, como funciona y para <br> qué es utilizado el sensor MQ2 para el usuario.
+            Agregar texto explicando cual es el funcionamiento y <br> objetivo de la página web y/o
+            explicación sobre qué es, como funciona y para qué es utilizado el sensor <br> MQ2 para el usuario.
+        </h3>
+
     </main>
 
-    <footer>
-        <p>&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
+    <footer class="bg-info text-white text-center p-3 mt-auto" >
+        <img src="img/Diseño_sin_título-removebg-preview.png" alt="Logo ProA La Falda" class="LogoProa">
+        <p class="Autores" >&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
-
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('#Links a');
-            const currentPage = window.location.pathname.split('/').pop(); // Obtener el nombre del archivo actual
-
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll('.nav-link');
+            const currentPage = window.location.pathname.split('/').pop() || '';
+        
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('activo'); // Agregar la clase activo al enlace correspondiente
+                    link.classList.add('active'); // Añade la clase 'active'
+                    link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                 }
+        
+                link.addEventListener('mouseover', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
+                    }
+                });
+        
+                link.addEventListener('mouseout', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = ''; // Restablece el color de fondo
+                    }
+                });
             });
         });
-    </script>
+        </script>
+        
+        
 </body>
 </html>

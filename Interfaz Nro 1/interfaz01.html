@@ -5,89 +5,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interfaz de sensor de datos mq2</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footerstyle.css">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="stylesheet" href="styleInterfaz.css">
 </head>
 <body>
-    <header>
+    <header class="bg-danger text-white text-center p-2">
         <nav>
-            <ul id="Links">
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="interfaz01.html">Conexion con MQ2</a></li>
+            <ul class="Link">
+                <li><a class="nav-link" href="Index.html">Home</a></li>
+                <li><a class="nav-link" href="interfaz01.html">Conexión con MQ2</a></li>
             </ul>
         </nav> 
-        <section class="RectAma"></section>
+        <div class="RectAma"></div>
     </header>
 
-    <main>
+    <main class="container mt-3">
        
         <section id="services">
             <table>
                 <thead>
                     <tr>
-                        <th class="Blue">Servicio</th>
-                        <th class="Red">Descripción</th>
+                        <th class="Blue">Dato analógico</th>
+                        <th class="Red">Dato digital</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
                     </tr>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloClaro">Dato</td>
+                        <td class="amarilloClaro">Dato</td>
                     </tr>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
                     </tr>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloClaro">Dato</td>
+                        <td class="amarilloClaro">Dato</td>
                     </tr>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
+                        <td class="amarilloOscuro">Dato</td>
                     </tr>
                     <tr>
-                        <td>Dato</td>
-                        <td>Dato</td>
+                        <td class="amarilloClaro">Dato</td>
+                        <td class="amarilloClaro">Dato</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <div id="Mensaje">
-            <h3>Mensaje  de estado que 
-                informe al usuario si la 
-                conexión está activa o si hubo
-                 algún problema durante la
-                 transmisión de datos.
-            </h3>
+        <div id="message">
+            <h3> Esperando conexión... </h3>
         </div>
-        <button id="BotonI">Boton de inicio</button>
-        <button id="BotonD">Boton de desconexion</button>
+        
+        <button id="BotonC">Conectar</button>
+        <button id="BotonD">Desconectar</button>
        
     </main>
 
     <footer>
-        <p>&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
+        <img src="img/Diseño_sin_título-removebg-preview.png" alt="Logo ProA La Falda" class="LogoProa">
+        <p class="Autores">&copy; 2024 Chicharras S.P.E Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('#Links a');
-            const currentPage = window.location.pathname.split('/').pop(); // Obtener el nombre del archivo actual
-
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll('.nav-link');
+            const currentPage = window.location.pathname.split('/').pop() || '';
+        
             links.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('activo'); // Agregar la clase activo al enlace correspondiente
+                    link.classList.add('active'); // Añade la clase 'active'
+                    link.style.backgroundColor = 'darkgray'; // Establece el fondo gris oscuro
                 }
+        
+                link.addEventListener('mouseover', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = 'lightgray'; // Color gris claro al pasar el ratón
+                    }
+                });
+        
+                link.addEventListener('mouseout', () => {
+                    if (!link.classList.contains('active')) {
+                        link.style.backgroundColor = ''; // Restablece el color de fondo
+                    }
+                });
             });
         });
-    </script>
 
+          // Funciones para conectar y desconectar
+        document.getElementById('BotonC').addEventListener('click', () => {
+            if (confirm("¿Deseas conectarte a la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Conexión exitosa</h3>";
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Conexión cancelada</h3>";
+            }
+        });
+
+        document.getElementById('BotonD').addEventListener('click', () => {
+            if (confirm("¿Deseas desconectarte de la placa?")) {
+                document.getElementById('message').innerHTML = "<h3>Desconexión exitosa</h3>";
+            } else {
+                document.getElementById('message').innerHTML = "<h3>Desconexión cancelada</h3>";
+            }
+        });
+
+        </script>
 </body>
 </html>
